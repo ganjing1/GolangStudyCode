@@ -7,7 +7,7 @@ import (
 
 func main() {
 	//读取文件
-	in, err := ioutil.ReadFile("F:\\Users\\gj\\gostudy\\PersonalExercise\\File\\demo1\\Test.txt")
+	in, err := ioutil.ReadFile("F:\\Users\\gj\\gostudy\\PersonalExercise\\File\\Traditional test\\Test.txt")
 	//返回一个[]byte,err切片
 	if err != nil {
 		fmt.Println("fail read err is:", err)
