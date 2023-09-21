@@ -23,7 +23,7 @@ func main() {
 	//打印：
 	fmt.Println("服务器端启动了。。")
 	//进行监听：需要指定服务器端TCP协议，服务器端的IP+PORT
-	listen, err := net.Listen("tcp", "127.0.0.1:8888")
+	listen, err := net.Listen("tcp", "192.168.31.122:8888")
 	if err != nil { //监听失败
 		fmt.Println("监听失败，err:", err)
 		return
