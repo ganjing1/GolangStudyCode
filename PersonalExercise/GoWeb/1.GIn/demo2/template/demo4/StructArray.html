@@ -1,0 +1,19 @@
+{{define "demo4/StructArray.html"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{range .}}
+    {{.Name}}
+    {{.Age}}
+    <br>
+{{end}}
+{{range $v:=.}}
+        {{$v}}
+{{end}}
+</body>
+</html>
+{{end}}

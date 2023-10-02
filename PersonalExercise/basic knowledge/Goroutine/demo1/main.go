@@ -15,7 +15,7 @@ func test() {
 }
 
 func main() { //主线程
-	//test()//只是调用函数
+	//PythonWork()//只是调用函数
 	go test() //开启协程，交替执行
 	for i := 1; i <= 5; i++ {
 		fmt.Println("java+" + strconv.Itoa(i))

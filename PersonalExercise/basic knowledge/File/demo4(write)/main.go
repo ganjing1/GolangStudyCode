@@ -8,7 +8,7 @@ import (
 
 func main() {
 	//Openfile(路径,打开方式,权限对应的数字)
-	file, err := os.OpenFile("F:\\Users\\gj\\gostudy\\PersonalExercise\\File\\demo4(write)\\test.txt",
+	file, err := os.OpenFile("F:\\Users\\gj\\gostudy\\PersonalExercise\\File\\demo4(write)\\PythonWork.txt",
 		os.O_RDWR|os.O_APPEND|os.O_CREATE, 0666)
 
 	//perm：文件权限，只有在创建新文件时才有效，可以使用 os.FileMode

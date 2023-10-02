@@ -33,7 +33,7 @@ func main() {
 
 }
 func Test() {
-	fmt.Println("hello, this is test function!")
+	fmt.Println("hello, this is PythonWork function!")
 }
 
 type student struct {

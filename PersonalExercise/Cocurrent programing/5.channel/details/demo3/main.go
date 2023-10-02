@@ -14,7 +14,7 @@ func sayHello() {
 func test() {
 	defer func() {
 		if err := recover(); err != nil {
-			fmt.Println("test()发生错误", err)
+			fmt.Println("PythonWork()发生错误", err)
 		}
 	}()
 	var myMap map[int]string

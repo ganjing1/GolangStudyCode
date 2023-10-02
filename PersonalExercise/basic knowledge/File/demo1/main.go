@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	file, err := os.Open("F:\\Users\\gj\\gostudy\\PersonalExercise\\File\\Traditional test\\Test.txt")
+	file, err := os.Open("F:\\Users\\gj\\gostudy\\PersonalExercise\\File\\Traditional PythonWork\\Test.txt")
 	if err != nil { //如果有错误说明错误不为空
 		fmt.Println("have err:", err)
 	} else {

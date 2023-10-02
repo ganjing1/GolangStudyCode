@@ -9,7 +9,7 @@ import (
 
 func main() {
 
-	file, err := os.Open("F:\\Users\\gj\\gostudy\\PersonalExercise\\File\\Traditional test\\Test.txt")
+	file, err := os.Open("F:\\Users\\gj\\gostudy\\PersonalExercise\\File\\Traditional PythonWork\\Test.txt")
 	if err != nil {
 		fmt.Println("can't read")
 	} else {

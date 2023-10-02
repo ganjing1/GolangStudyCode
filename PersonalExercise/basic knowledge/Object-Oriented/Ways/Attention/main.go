@@ -1,22 +1,24 @@
 package main
+
 import "fmt"
+
 type Person struct {
 	name string
 }
 
 //这是方法和函数不一样
 /*
-Person 结构体有一个test()方法，test()和Person是绑定的
+Person 结构体有一个test()方法，PythonWork()和Person是绑定的
 a为结构体Person调用的具体对象，用对象来调用test()
 */
-func (a *Person) test(){
-	(*a).name="lisi"
+func (a *Person) test() {
+	(*a).name = "lisi"
 	fmt.Println((*a).name)
 }
 
-func main(){
+func main() {
 	var p Person
-	p.name="zhangsan"
+	p.name = "zhangsan"
 	(&p).test()
 	fmt.Println(p.name)
 }
