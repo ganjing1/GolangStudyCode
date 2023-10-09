@@ -8,11 +8,11 @@ import (
 func main() {
 	r := gin.Default()
 	//r.LoadHTMLFiles("template/hello01.html", "template/hello2.html")
-
-	/*会加载所有匹配该路径的模板文件，并将它们存储在内存中，以便后续使用*/
+	/*
+		会加载所有匹配该路径的模板文件，并将它们存储在内存中，以便后续使用
+	*/
 	//template/**/*下面有几级就用**代表目录级别，例如访问三层级别下的template/**/**/*
-	r.LoadHTMLGlob("F:\\Users\\gj\\gostudy\\PersonalExercise\\GoWeb\\1.GIn\\demo2\\template/**/*")
-
+	r.LoadHTMLGlob("PersonalExercise\\GoWeb\\1.GIn\\demo2\\template/**/*")
 	/*客户端可以通过访问 /s/xxx 的 URL 来获取 static 目录下的 xxx 文件*/
 	r.Static("/s", "F:\\Users\\gj\\gostudy\\PersonalExercise\\GoWeb\\1.GIn\\demo2\\static")
 

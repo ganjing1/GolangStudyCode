@@ -1,0 +1,53 @@
+{{define "demo1/hello1.html"}}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+{{/*    对文件进行引入操作*/}}
+    <script  src="/s/js/JQuery.min.js"></script>
+</head>
+<body>
+  <form action="/getUserinfo" method="post">
+      user:<input type="text" name="username" id="uname"><span id="errmsg"></span><br>
+      password:<input type="password" name="pwd" id ="userPW">
+     <input type="submit" value="提交">
+
+{{/*      action属性指定了当用户提交表单时，
+表单数据将被发送到的URL。在这个例子中，
+action="/getUserinfo"表示表单数据将被发送到服务器上的
+"/getUserinfo"路径。
+method属性指定了表单数据的发送方法。
+在这个例子中，method="post"表示表单数据将以POST请求的方式发送到服务器。*/}}
+  </form>
+<script>
+    //获取用户名的文本框
+    var unametext=document.getElementById("uname")
+    //文本框绑定一个一个事件：失去焦点的时候会触发后面的函数事件
+    unametext.onblur=function ( ){
+        //获取文本框的内容
+      var  uname=unametext.value;
+      alert(uname)//弹出数据验证代码的真实性
+       //调用ajax需要传入json格式的数据：$.ajax({属性名：属性值，属性名：属性值})
+
+        $.ajax({
+            url:"/ajaxpost",//请求路由
+            type:"POST",//请求类型get，post
+            data:{//往后端传入数据，以json格式传递
+                    "uname":uname
+            },
+            success:function (info){
+                //info代表后台响应的数据封装到info中，info名称任意
+                document.getElementById("errmsg").innerText=info["msg"]
+            },
+            fail:function (){
+
+            }
+        })
+    }
+</script>
+</body>
+</html>
+{{end}}

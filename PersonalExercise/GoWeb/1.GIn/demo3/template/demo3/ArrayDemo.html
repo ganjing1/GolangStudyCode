@@ -1,0 +1,20 @@
+{{define "demo3/ArrayDemo.html"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{/*1.第一个.代表的是传入的数组的上下文，第二个.代表遍历的数组的上下文*/}}
+{{range .}}
+    {{.}}
+{{end}}
+<br>
+{{range $i,$v:=.}}
+    {{$i}}
+    {{$v}}
+{{end}}
+</body>
+</html>
+{{end}}

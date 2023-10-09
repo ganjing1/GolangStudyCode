@@ -1,0 +1,28 @@
+{{define "demo1/hello1.html"}}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/s/js/JQuery.min.js" method="post"></script>
+    <link rel="stylesheet" href="./s/css/mycss.css">
+
+</head>
+<body>
+    <form action="/savefile" method="post">
+        <input type="file" id ="myfile">
+        <input type="submit" value="提交按钮" id="btn">
+    </form>
+<script>
+    //获取按钮
+    var btn=document.getElementById("btn")
+    //给按钮加入一个点击事件
+    btn.onclick=function (){
+        console.log$("#myfile")
+    }
+</script>
+</body>
+</html>
+{{end}}

@@ -1,0 +1,33 @@
+{{define "demo1/hello1.html"}}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <form action="/getUserinfo" method="post">
+      user:<input type="text" name="username">
+      password:<input type="password" name="pwd">
+      age:<input type="text" name="age">
+      你的爱好：
+      上网<input type="checkbox" name="hobby" value="0">
+      听歌<input type="checkbox" name="hobby" value="1">
+      学习<input type="checkbox" name="hobby" value="2">
+      运动<input type="checkbox" name="hobby" value="3">
+      地址：<input type="text" name="user[addr]">
+      email：<input type="text" name="user[email]">
+          <input type="submit" value="提交">
+
+{{/*      action属性指定了当用户提交表单时，
+表单数据将被发送到的URL。在这个例子中，
+action="/getUserinfo"表示表单数据将被发送到服务器上的
+"/getUserinfo"路径。
+method属性指定了表单数据的发送方法。
+在这个例子中，method="post"表示表单数据将以POST请求的方式发送到服务器。*/}}
+  </form>
+</body>
+</html>
+{{end}}
