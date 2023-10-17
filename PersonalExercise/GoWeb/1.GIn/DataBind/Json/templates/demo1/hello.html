@@ -1,0 +1,49 @@
+{{define "demo1/hello.html"}}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script src="/s/js/jQuery.min.js"></script>
+    </head>
+    <body>
+    这是hello3.html页面
+    <form>
+        用户名字：<input type="text" name="uname" id="uname">
+        年龄：<input type="text" name="age" id="age">
+        <input type="button" value="提交" id="btn">
+    </form>
+    <script>
+        //获取按钮
+        var btn = document.getElementById("btn")
+        //给按钮绑定单击事件：
+        btn.onclick = function () {
+            //获取表单中元素：
+            var uname = document.getElementById("uname").value;
+            var age = document.getElementById("age").value;
+            //通过ajax方式向后台传递：
+            $.ajax({
+                url : "/toajax",
+                type : "POST",
+                //如果向后台提交的是Json字符串需要加入这个属性：
+                contentType : "application/json",
+                //JSON.stringify() 方法用于将 JavaScript 值转换为 JSON 字符串。
+                data : JSON.stringify({
+                    "uname" : uname,
+                    "age" : Number(age)
+                }),
+                success : function (info) {
+                    alert(info["msg"])
+                }
+            /*
+            当用户在HTML页面上填写表单并提交时，会触发一个ajax请求，
+              向/toindex端点发送一个JSON格式的数据，包含用户名和年龄。服务器收到请求后，
+                 会调用func Hello2函数来处理请求，并返回一个JSON格式的响应。浏览器收到响应后，
+                会调用success : function (info)函数来处理响应，并弹出一个提示框显示响应中的msg属性。
+                */
+            })
+        }
+    </script>
+    </body>
+    </html>
+{{end}}

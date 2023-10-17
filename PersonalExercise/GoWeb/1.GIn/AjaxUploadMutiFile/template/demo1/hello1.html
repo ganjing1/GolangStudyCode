@@ -10,6 +10,8 @@
     定义一个用户的form表单：
     <form action="/savefile" method="post">
         <input type="file" class="myfile" multiple="multiple">
+        <input type="file" class="myfile" multiple="multiple">
+        <input type="file" class="myfile" multiple="multiple">
         <input type="button" value="提交按钮" id="btn">
     </form>
     <script>
@@ -17,14 +19,15 @@
         var btn = document.getElementById("btn");
         //给按钮加入一个单击事件：
         btn.onclick = function () {
-            console.log($(".myfile")); //$(".myfile") 获取到class为myfile的所有文件，形式以数组形式存放
-            console.log($(".myfile")[0]);//获取到class为myfile的所有文件中的第一个文件
-            console.log($(".myfile")[0].files);//获取到class为myfile的所有文件中的第一个文件中上传的所有文件
-            console.log($(".myfile")[0].files[0]);//获取到class为myfile的所有文件中的第一个文件中上传的所有文件的第一个文件
             //创建存放form表单的数据：
             var form_data = new FormData();
-            //在form_data添加要传入到后台的元素：
-            form_data.append("file",$(".myfile")[0].files[0])
+
+            //获取多个文件
+            var myfiles=$(".myfile")
+            //对多个文件遍历，每个添加到form_data中去
+            for (var i=0;i<myfiles.length;i++){
+                form_data.append("myfile",myfiles[i].files[0]);
+            }
             //利用ajax向后台传递数据：
             $.ajax({
                 url : "/savefile",

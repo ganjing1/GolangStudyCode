@@ -12,12 +12,9 @@ func Hello1(context *gin.Context) {
 }
 
 func Hello2(context *gin.Context) {
-	//获取前端传入的文件：
 	file, _ := context.FormFile("myfile")
-
-	//加入时间戳
 	time_int := time.Now().Unix()
 	time_str := strconv.FormatInt(time_int, 10)
-	context.SaveUploadedFile(file, "F:\\Users\\gj\\gostudy\\PersonalExercise\\GoWeb\\1.GIn\\UploadFile\\"+time_str+file.Filename)
+	context.SaveUploadedFile(file, "F:\\Users\\gj\\gostudy\\PersonalExercise\\GoWeb\\1.GIn\\UploadFile\\"+file.Filename+time_str)
 	fmt.Println(file.Filename)
 }

@@ -7,8 +7,8 @@ import (
 
 func main() {
 	r := gin.Default()
-	r.LoadHTMLGlob("PersonalExercise\\GoWeb\\1.GIn\\UploadFile\\template//**/*")
+	r.LoadHTMLGlob("PersonalExercise\\GoWeb\\1.GIn\\UploadFile\\template/**/*")
 	r.GET("/userindex", myFunc.Hello1)
-	r.POST("/savefile", myFunc.Hello2)
+	r.POST("/getuser", myFunc.Hello2)
 	r.Run()
 }

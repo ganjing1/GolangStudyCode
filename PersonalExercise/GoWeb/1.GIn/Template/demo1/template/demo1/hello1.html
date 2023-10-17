@@ -1,0 +1,107 @@
+{{define "demo1/hello1.html"}}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+
+    </head>
+    <body>
+        {{/* 获取后端传过来的map_data中的内容*/}}
+       {{/**/}}
+        {{.age}}
+        {{range .arr}}
+            {{/*上下文指的是.arr这个上下文,指的是遍历每一个元素*/}}
+            <br>
+            {{.}}
+        {{end}}
+        {{range $i,$v:=.arr}}
+            {{/*上下文指的是.arr这个上下文,指的是遍历每一个元素*/}}
+            <br>
+            {{$i}}:{{$v}}
+        {{end}}
+        <br>
+        对符号的支持：
+        {{"马士兵教育"}}
+        {{`马士兵`}}
+        {{'a'}}
+        {{print "甘a"}}
+        {{print nil}}
+
+    变量的定义：
+    {{$name:="ganjing"}}
+    变量的使用
+    {{$name}}
+    <br>
+    {{if.flag}}
+        后端传过来是true
+    {{end}}
+    {{if .username}}
+        后端传入了数据
+     {{else}}
+        后端未传入数据
+    {{end}}
+    <br>
+    {{.stu.Age}}
+        <br>
+        {{.stu.Name}}
+    <br>
+    启动with关键字
+    {{with .stu}}
+        {{/*
+        通过with 关键字把.stu 换成.，只在with
+        作用域有效
+        */}}
+        {{.Age}}
+    {{else}}
+            暂无数据
+    {{end}}
+
+    <br>
+    内嵌另外的模板：
+    {{template "template/demo1/hello2.html"}}
+    <br>
+    {{print "be around of"}}
+    {{printf "age:%d,name:%s " 18 "干劲"}}
+
+    {{len .arr}}
+    {{"ganjin"|printf "%s"}}
+
+    {{printf "name:%s,address:%s" "tidy" (printf "%s-%s" "武汉市" "汉阳区")}}
+    <br>
+        {{/*.age和.username都不是空，所以返回后一个*/}}
+    {{and .age .username}}
+    {{and .username .age}}
+        {{/*.xxx和.age只要有一个是空，那么返回空*/}}
+    {{and .xxx .age}}
+    <br>
+        {{/*.age和.username都不是空，所以返回前一个*/}}
+    {{or .age .username}}
+        {{/*    .xxx是空，但是.age不是空，返回第一个不为空*/}}
+    {{or .age .xxx}}
+
+    <br>
+        {{/*用于判断，看是否有值，返回相反的布尔值*/}}
+    {{not .age}}
+    {{not .bbb}}
+    <br>
+    {{index  "abc" 2}}
+    {{index .arr 0}}
+
+    <br>
+        {{/*返回bool类型的值*/}}
+    {{eq 26 89}}
+    {{ne 26 89}}
+    {{lt 26 89}}
+    {{le 26 89}}
+    {{gt 26 89}}
+    {{ge 26 89}}
+    <br>
+    {{.now_time.Format "2006-01-02 15-04-02"}}
+    <br>
+    调用自定义Add函数
+    {{add 11 66}}
+    </body>
+
+    </html>
+{{end}}

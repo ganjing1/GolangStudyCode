@@ -1,0 +1,41 @@
+{{define  "demo1/hello3.html"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="/s/js/JQuery.min.js"></script>
+</head>
+<body>
+hello03
+<form >
+    用户名:<input type="text" name="username" id="uname">
+    年龄：<input type="text" name="age" id="age">
+    <input type="button" value="提交" id="btn">
+    <script>
+        var btn=document.getElementById("btn")
+        btn.onclick=function (){
+           var uname= document.getElementById("uname").value
+           var age= document.getElementById("age").value
+            $.ajax({
+                url:"/toajax",
+                type:"POST",
+
+                //如果向后台提交的是json字符串需要加入
+                contentType:"application/json",
+
+                //将javascript 值转换为json字符串
+                data:JSON.stringify({
+                    "uname":uname,
+                    "age":Number(age)
+                }),
+                success:function (info){
+                    alert(info["msg"])
+                }
+            })
+        }
+    </script>
+</form>
+</body>
+</html>
+{{end}}
