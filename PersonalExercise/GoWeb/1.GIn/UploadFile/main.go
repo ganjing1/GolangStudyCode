@@ -8,6 +8,10 @@ import (
 func main() {
 	r := gin.Default()
 	r.LoadHTMLGlob("PersonalExercise\\GoWeb\\1.GIn\\UploadFile\\template/**/*")
+
+	r.StaticFile("PersonalExercise/GoWeb/1.Gin2/2_试图/static/girl.png", "PersonalExercise/GoWeb/1.Gin2/2_试图/static/girl.png")
+
+	r.Static("PersonalExercise/GoWeb/1.Gin2/2_试图/static", "s")
 	r.GET("/userindex", myFunc.Hello1)
 	r.POST("/getuser", myFunc.Hello2)
 	r.Run()
