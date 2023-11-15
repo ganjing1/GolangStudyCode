@@ -7,7 +7,7 @@ import (
 )
 
 func Hello1(context *gin.Context) {
-	context.HTML(200, "demo1/hello1.html", nil)
+	context.HTML(200, "1.demo1/hello1.html", nil)
 }
 
 func Hello4(context *gin.Context) {
@@ -19,6 +19,6 @@ func Hello4(context *gin.Context) {
 		time_int := time.Now().Unix()
 		time_str := strconv.FormatInt(time_int, 10) //10:十进制
 		//保存在我的本地：
-		context.SaveUploadedFile(file, "PersonalExercise\\GoWeb\\1.GIn\\demo1"+time_str+file.Filename)
+		context.SaveUploadedFile(file, "PersonalExercise\\GoWeb\\1.GIn\\1.demo1"+time_str+file.Filename)
 	}
 }

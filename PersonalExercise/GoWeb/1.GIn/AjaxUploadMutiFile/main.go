@@ -10,10 +10,10 @@ func main() {
 	//写路由：
 	//加载html页面：
 	r.LoadHTMLGlob("F:\\Users\\gj\\gostudy\\PersonalExercise\\" +
-		"GoWeb\\1.GIn\\demo1\\template/**/*")
+		"GoWeb\\1.GIn\\1.demo1\\template/**/*")
 	//指定js文件：
 	r.Static("/s", "PersonalExercise/GoWeb/1.GIn/"+
-		"demo1/static")
+		"1.demo1/static")
 	//定义路由：
 	r.GET("/userindex", myFunc.Hello1)
 	r.POST("/savefile", myFunc.Hello4)

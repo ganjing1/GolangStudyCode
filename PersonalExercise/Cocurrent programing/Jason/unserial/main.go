@@ -8,7 +8,7 @@ import (
 func UnMarshalStruct() {
 	//str 是通过网络传输获取到的，
 	str := "{\"monster_name\":\"甘进\",\"monster_age\":22,\"monster_birthday\":" +
-		"\"2001/01/10\",\"monster_salary\":3001.5,\"r_skill\":\"Golang Mysql\"}\n"
+		"\"2001/01/10\",\"monster_salary\":3001.5,\"r_skill\":\"Golang QiMi_GoWebProjectProgramming\"}\n"
 	var monster Monster
 
 	//Unmarshal接收两个参数

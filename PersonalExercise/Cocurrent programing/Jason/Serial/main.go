@@ -19,7 +19,7 @@ func testStruct() {
 		Name:     "甘进",
 		Birthday: "2001/01/10",
 		Salary:   3001.5,
-		Skill:    "Golang Mysql",
+		Skill:    "Golang QiMi_GoWebProjectProgramming",
 	}
 	//将ganjing 序列化
 	//json.Marshal()函数用于将数据序列化为JSON格式。它的参数是一个指向要序列化的数据的指针

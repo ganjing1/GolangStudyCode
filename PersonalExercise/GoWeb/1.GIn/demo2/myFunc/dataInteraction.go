@@ -5,7 +5,7 @@ import "github.com/gin-gonic/gin"
 func Hello(context *gin.Context) {
 	name := "my name is Ganjin"
 	//200代表状态码：请求成功。一般用于GET与POST请求
-	context.HTML(200, "demo1/hello1.html", name)
+	context.HTML(200, "1.demo1/hello1.html", name)
 }
 
 type Student struct {

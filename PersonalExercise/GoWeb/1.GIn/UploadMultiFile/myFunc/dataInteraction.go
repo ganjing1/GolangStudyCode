@@ -7,7 +7,7 @@ import (
 )
 
 func Hello1(context *gin.Context) {
-	context.HTML(200, "demo1/hello1.html", nil)
+	context.HTML(200, "1.demo1/hello1.html", nil)
 }
 
 func Hello2(context *gin.Context) {

@@ -6,7 +6,7 @@ import (
 )
 
 func Hello(context *gin.Context) {
-	context.HTML(200, "demo1/hello.html", nil)
+	context.HTML(200, "1.demo1/hello.html", nil)
 }
 
 type JsonBind struct {

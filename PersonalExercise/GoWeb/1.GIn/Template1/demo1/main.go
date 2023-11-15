@@ -9,8 +9,8 @@ import (
 func main() {
 	r := gin.Default()
 
-	r.LoadHTMLGlob("PersonalExercise\\GoWeb\\1.GIn\\Template1\\demo1\\template/**/*")
-	r.Static("/s", "PersonalExercise\\GoWeb\\1.GIn\\Template1\\demo1\\static")
+	r.LoadHTMLGlob("PersonalExercise\\GoWeb\\1.GIn\\Template1\\1.demo1\\template/**/*")
+	r.Static("/s", "PersonalExercise\\GoWeb\\1.GIn\\Template1\\1.demo1\\static")
 
 	r.GET("/userindex3", myFunc.Hello4)
 	r.POST("/toajax", myFunc.Hello5)

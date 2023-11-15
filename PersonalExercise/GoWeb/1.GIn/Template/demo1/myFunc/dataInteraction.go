@@ -27,7 +27,7 @@ func Hello1(context *gin.Context) {
 		"stu":      stu,
 		"now_time": now_time,
 	}
-	context.HTML(200, "demo1/hello1.html", map_data)
+	context.HTML(200, "1.demo1/hello1.html", map_data)
 }
 
 func Hello4(context *gin.Context) {

@@ -12,7 +12,7 @@ type User2 struct {
 
 func Hello4(context *gin.Context) {
 
-	context.HTML(200, "demo1/hello3.html", nil)
+	context.HTML(200, "1.demo1/hello3.html", nil)
 }
 func Hello5(context *gin.Context) {
 	var user User2
